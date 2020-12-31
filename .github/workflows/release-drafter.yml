@@ -19,5 +19,7 @@ jobs:
     steps:
       - uses: release-drafter/release-drafter@v5
         name: Draft
+        with:
+          publish: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
