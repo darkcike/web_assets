@@ -1,0 +1,23 @@
+# This workflow will triage pull requests and apply a label based on the
+# paths that are modified in the pull request.
+#
+# To use this workflow, you will need to set up a .github/labeler.yml
+# file with configuration.  For more information, see:
+# https://github.com/actions/labeler
+
+name: Release Drafter
+
+on:
+  push:
+    branches:
+      - master # 在 master 分支发生更新时执行此 action
+
+jobs:
+  draft_release:
+    name: Draft release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: release-drafter/release-drafter@v5.13.0
+        name: Draft
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
