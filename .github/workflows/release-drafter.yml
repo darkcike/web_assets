@@ -10,7 +10,7 @@ name: Release Drafter
 on:
   push:
     branches:
-      - master # 在 master 分支发生更新时执行此 action
+      - main # 在 main 分支发生更新时执行此 action
 
 jobs:
   draft_release:
